@@ -1,0 +1,142 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ffuch/Documents/Lab2/simulation/modelsim
+vProblema1
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1756918369
+!i10b 1
+!s100 HFoE^S2H?XADhaKhWzl2^1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+INhlLiEK?lk;X>`Dmh4^nS2
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1756856923
+8C:/Users/ffuch/Documents/Lab2/Problema1.sv
+FC:/Users/ffuch/Documents/Lab2/Problema1.sv
+!i122 3
+L0 1 115
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1756918369.000000
+!s107 C:/Users/ffuch/Documents/Lab2/Problema1.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ffuch/Documents/Lab2|C:/Users/ffuch/Documents/Lab2/Problema1.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+C:/Users/ffuch/Documents/Lab2
+Z9 tCvgOpt 0
+n@problema1
+vrestador_parametrizable
+R1
+R2
+!i10b 1
+!s100 hLUjBCfT^i1GO6[Ma>YP=2
+R3
+IOCRI55Oi[k]K]FAZA>DNE1
+R4
+S1
+R0
+w1756852569
+8C:/Users/ffuch/Documents/Lab2/restador_parametrizable.sv
+FC:/Users/ffuch/Documents/Lab2/restador_parametrizable.sv
+!i122 2
+L0 1 28
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/ffuch/Documents/Lab2/restador_parametrizable.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ffuch/Documents/Lab2|C:/Users/ffuch/Documents/Lab2/restador_parametrizable.sv|
+!i113 1
+R7
+R8
+R9
+vsuma_parametrizable
+R1
+R2
+!i10b 1
+!s100 MUO^3JiiOM9o:^M_Mji311
+R3
+IZ8hVUWg0aGoiM;`;DCfg:0
+R4
+S1
+R0
+w1756852103
+8C:/Users/ffuch/Documents/Lab2/suma_parametrizable.sv
+FC:/Users/ffuch/Documents/Lab2/suma_parametrizable.sv
+!i122 1
+L0 1 40
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/ffuch/Documents/Lab2/suma_parametrizable.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ffuch/Documents/Lab2|C:/Users/ffuch/Documents/Lab2/suma_parametrizable.sv|
+!i113 1
+R7
+R8
+R9
+vsuma_posicion
+R1
+R2
+!i10b 1
+!s100 294zAU=IoXm<D=S_6i?dZ1
+R3
+IW<:78SUT[^97WniOfPl7O2
+R4
+S1
+R0
+w1756850843
+8C:/Users/ffuch/Documents/Lab2/suma_posicion.sv
+FC:/Users/ffuch/Documents/Lab2/suma_posicion.sv
+!i122 0
+L0 1 10
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/ffuch/Documents/Lab2/suma_posicion.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ffuch/Documents/Lab2|C:/Users/ffuch/Documents/Lab2/suma_posicion.sv|
+!i113 1
+R7
+R8
+R9
+vtb_problema1
+R1
+!s110 1756918370
+!i10b 1
+!s100 AY?_R:>0PB@NiPQd:<ZbZ2
+R3
+IXCXl?aQ_h;aP=04R:dl>H3
+R4
+S1
+R0
+w1756855984
+8C:/Users/ffuch/Documents/Lab2/tb_problema1.sv
+FC:/Users/ffuch/Documents/Lab2/tb_problema1.sv
+!i122 4
+L0 3 116
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/ffuch/Documents/Lab2/tb_problema1.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/ffuch/Documents/Lab2|C:/Users/ffuch/Documents/Lab2/tb_problema1.sv|
+!i113 1
+R7
+R8
+R9

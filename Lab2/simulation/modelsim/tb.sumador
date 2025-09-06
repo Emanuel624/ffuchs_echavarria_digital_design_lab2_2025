@@ -1,0 +1,53 @@
+`timescale 1ns/1ps
+
+module tb_suma_parametrizable;
+
+    parameter N = 4;
+
+    // Entradas como reg
+    reg [N-1:0] A;
+    reg [N-1:0] B;
+    reg CIN;
+
+    // Salidas como wire
+    wire [N-1:0] suma;
+    wire cout;
+
+    // Instancia del sumador parametrizable
+    suma_parametrizable #(N) uut (
+        .A(A),
+        .B(B),
+        .CIN(CIN),
+        .suma(suma),
+        .cout(cout)
+    );
+
+    integer i, j; // índices para los for loops
+
+    initial begin
+        $display("Tiempo\tA\tB\tCIN\tsuma\tcout");
+
+        // Probar todas las combinaciones de A y B y CIN
+        for (i = 0; i < 2**N; i = i + 1) begin
+            for (j = 0; j < 2**N; j = j + 1) begin
+                // Probar CIN = 0
+                A = i;
+                B = j;
+                CIN = 0;
+                #5;
+                $display("%0t\t%b\t%b\t%b\t%b\t%b", $time, A, B, CIN, suma, cout);
+
+                // Probar CIN = 1
+                CIN = 1;
+                #5;
+                $display("%0t\t%b\t%b\t%b\t%b\t%b", $time, A, B, CIN, suma, cout);
+            end
+        end
+
+        $finish;
+    end
+
+endmodule
+
+
+
