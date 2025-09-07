@@ -40,9 +40,10 @@ module Top_Problema1_FPGA_7SEG #(
     wire k2_fall = (k2_d == 1'b1) && (k2_q == 1'b0); // NEXT
     wire k3_fall = (k3_d == 1'b1) && (k3_q == 1'b0); // PREV
 
-    // Lista de opcodes válidos (0..8): 0=ADD,1=SUB,2=DIV,3=AND,4=OR,5=XOR,6=MOD,7=SHL,8=SHR
-    localparam int OPC_MIN = 4'h0;
-    localparam int OPC_MAX = 4'h8;
+	// Lista de opcodes válidos (0..9):
+	// 0=ADD, 1=SUB, 2=MUL, 3=DIV, 4=AND, 5=OR, 6=XOR, 7=MOD, 8=SHL, 9=SHR
+	localparam int OPC_MIN = 4'h0;
+	localparam int OPC_MAX = 4'h9;
 
     // Avance/retroceso de opcode
     always_ff @(posedge CLOCK_50 or negedge KEY[1]) begin

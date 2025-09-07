@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Sep 04 11:14:43 2025
+Fitter Status : Successful - Sun Sep 07 04:12:47 2025
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : Lab2
 Top-level Entity Name : Top_Problema1_FPGA_7SEG
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 70 / 41,910 ( < 1 % )
-Total registers : 30
+Logic utilization (in ALMs) : 95 / 41,910 ( < 1 % )
+Total registers : 29
 Total pins : 67 / 499 ( 13 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )

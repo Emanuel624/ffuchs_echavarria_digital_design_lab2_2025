@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab2
-Thu Sep 04 11:13:53 2025
+Sun Sep 07 04:11:55 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -21,13 +21,22 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  13. Parameter Settings for User Entity Instance: Problema1:dut|suma_parametrizable:u_add
  14. Parameter Settings for User Entity Instance: Problema1:dut|restador_parametrizable:u_sub
  15. Parameter Settings for User Entity Instance: Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1
- 16. Parameter Settings for Inferred Entity Instance: Problema1:dut|lpm_divide:Div0
- 17. Parameter Settings for Inferred Entity Instance: Problema1:dut|lpm_divide:Mod0
- 18. Port Connectivity Checks: "Problema1:dut|restador_parametrizable:u_sub"
- 19. Port Connectivity Checks: "Problema1:dut|suma_parametrizable:u_add"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+ 16. Parameter Settings for User Entity Instance: Problema1:dut|multiplier:u_mul
+ 17. Parameter Settings for User Entity Instance: Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i
+ 18. Parameter Settings for User Entity Instance: Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i
+ 19. Parameter Settings for User Entity Instance: Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i
+ 20. Parameter Settings for User Entity Instance: Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i
+ 21. Parameter Settings for Inferred Entity Instance: Problema1:dut|lpm_divide:Div0
+ 22. Parameter Settings for Inferred Entity Instance: Problema1:dut|lpm_divide:Mod0
+ 23. Port Connectivity Checks: "Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i"
+ 24. Port Connectivity Checks: "Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i"
+ 25. Port Connectivity Checks: "Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i"
+ 26. Port Connectivity Checks: "Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i"
+ 27. Port Connectivity Checks: "Problema1:dut|restador_parametrizable:u_sub"
+ 28. Port Connectivity Checks: "Problema1:dut|suma_parametrizable:u_add"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
 
 
 
@@ -54,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Sep 04 11:13:53 2025       ;
+; Analysis & Synthesis Status     ; Successful - Sun Sep 07 04:11:55 2025       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Lab2                                        ;
 ; Top-level Entity Name           ; Top_Problema1_FPGA_7SEG                     ;
@@ -167,36 +176,37 @@ https://fpgasoftware.intel.com/eula.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 16          ;
-; Maximum allowed            ; 12          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
-; suma_posicion.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/ffuch/Documents/Lab2/suma_posicion.sv                             ;         ;
-; suma_parametrizable.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/ffuch/Documents/Lab2/suma_parametrizable.sv                       ;         ;
-; restador_parametrizable.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/ffuch/Documents/Lab2/restador_parametrizable.sv                   ;         ;
-; Problema1.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/ffuch/Documents/Lab2/Problema1.sv                                 ;         ;
-; Top_Problema1_FPGA_7SEG.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv                   ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc      ;         ;
-; db/lpm_divide_1am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ffuch/Documents/Lab2/db/lpm_divide_1am.tdf                        ;         ;
-; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/ffuch/Documents/Lab2/db/sign_div_unsign_7kh.tdf                   ;         ;
-; db/alt_u_div_kse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/ffuch/Documents/Lab2/db/alt_u_div_kse.tdf                         ;         ;
-; db/lpm_divide_42m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/ffuch/Documents/Lab2/db/lpm_divide_42m.tdf                        ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                           ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
+; suma_posicion.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_posicion.sv           ;         ;
+; suma_parametrizable.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_parametrizable.sv     ;         ;
+; restador_parametrizable.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/restador_parametrizable.sv ;         ;
+; Problema1.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv               ;         ;
+; Top_Problema1_FPGA_7SEG.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv ;         ;
+; multiplier.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/multiplier.sv              ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                                  ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                                                                 ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                             ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                                                  ;         ;
+; db/lpm_divide_1am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/db/lpm_divide_1am.tdf      ;         ;
+; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/db/sign_div_unsign_7kh.tdf ;         ;
+; db/alt_u_div_kse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/db/alt_u_div_kse.tdf       ;         ;
+; db/lpm_divide_42m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/db/lpm_divide_42m.tdf      ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------+
@@ -204,14 +214,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimate of Logic utilization (ALMs needed) ; 70       ;
+; Estimate of Logic utilization (ALMs needed) ; 95       ;
 ;                                             ;          ;
-; Combinational ALUT usage for logic          ; 125      ;
-;     -- 7 input functions                    ; 4        ;
-;     -- 6 input functions                    ; 9        ;
-;     -- 5 input functions                    ; 28       ;
-;     -- 4 input functions                    ; 46       ;
-;     -- <=3 input functions                  ; 38       ;
+; Combinational ALUT usage for logic          ; 154      ;
+;     -- 7 input functions                    ; 3        ;
+;     -- 6 input functions                    ; 31       ;
+;     -- 5 input functions                    ; 20       ;
+;     -- 4 input functions                    ; 50       ;
+;     -- <=3 input functions                  ; 50       ;
 ;                                             ;          ;
 ; Dedicated logic registers                   ; 26       ;
 ;                                             ;          ;
@@ -220,34 +230,50 @@ https://fpgasoftware.intel.com/eula.
 ; Total DSP Blocks                            ; 0        ;
 ;                                             ;          ;
 ; Maximum fan-out node                        ; B_reg[3] ;
-; Maximum fan-out                             ; 35       ;
-; Total fan-out                               ; 679      ;
-; Average fan-out                             ; 2.38     ;
+; Maximum fan-out                             ; 39       ;
+; Total fan-out                               ; 814      ;
+; Average fan-out                             ; 2.59     ;
 +---------------------------------------------+----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                   ;
-+--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
-; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                    ; Entity Name             ; Library Name ;
-+--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
-; |Top_Problema1_FPGA_7SEG                   ; 125 (38)            ; 26 (26)                   ; 0                 ; 0          ; 67   ; 0            ; |Top_Problema1_FPGA_7SEG                                                                                                               ; Top_Problema1_FPGA_7SEG ; work         ;
-;    |Problema1:dut|                         ; 87 (37)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut                                                                                                 ; Problema1               ; work         ;
-;       |lpm_divide:Div0|                    ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Div0                                                                                 ; lpm_divide              ; work         ;
-;          |lpm_divide_1am:auto_generated|   ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Div0|lpm_divide_1am:auto_generated                                                   ; lpm_divide_1am          ; work         ;
-;             |sign_div_unsign_7kh:divider|  ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh     ; work         ;
-;                |alt_u_div_kse:divider|     ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse           ; work         ;
-;       |lpm_divide:Mod0|                    ; 24 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Mod0                                                                                 ; lpm_divide              ; work         ;
-;          |lpm_divide_42m:auto_generated|   ; 24 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                   ; lpm_divide_42m          ; work         ;
-;             |sign_div_unsign_7kh:divider|  ; 24 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh     ; work         ;
-;                |alt_u_div_kse:divider|     ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse           ; work         ;
-;       |restador_parametrizable:u_sub|      ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub                                                                   ; restador_parametrizable ; work         ;
-;          |suma_parametrizable:U1|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1                                            ; suma_parametrizable     ; work         ;
-;             |suma_posicion:sum_loop[1].fa| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[1].fa               ; suma_posicion           ; work         ;
-;             |suma_posicion:sum_loop[2].fa| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[2].fa               ; suma_posicion           ; work         ;
-;       |suma_parametrizable:u_add|          ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|suma_parametrizable:u_add                                                                       ; suma_parametrizable     ; work         ;
-;          |suma_posicion:sum_loop[2].fa|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|suma_parametrizable:u_add|suma_posicion:sum_loop[2].fa                                          ; suma_posicion           ; work         ;
-+--------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                       ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                    ; Entity Name             ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; |Top_Problema1_FPGA_7SEG                       ; 154 (38)            ; 26 (26)                   ; 0                 ; 0          ; 67   ; 0            ; |Top_Problema1_FPGA_7SEG                                                                                                               ; Top_Problema1_FPGA_7SEG ; work         ;
+;    |Problema1:dut|                             ; 116 (49)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut                                                                                                 ; Problema1               ; work         ;
+;       |lpm_divide:Div0|                        ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Div0                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_1am:auto_generated|       ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Div0|lpm_divide_1am:auto_generated                                                   ; lpm_divide_1am          ; work         ;
+;             |sign_div_unsign_7kh:divider|      ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh     ; work         ;
+;                |alt_u_div_kse:divider|         ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse           ; work         ;
+;       |lpm_divide:Mod0|                        ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Mod0                                                                                 ; lpm_divide              ; work         ;
+;          |lpm_divide_42m:auto_generated|       ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                   ; lpm_divide_42m          ; work         ;
+;             |sign_div_unsign_7kh:divider|      ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh     ; work         ;
+;                |alt_u_div_kse:divider|         ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse           ; work         ;
+;       |multiplier:u_mul|                       ; 16 (2)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul                                                                                ; multiplier              ; work         ;
+;          |suma_parametrizable:gen_pp[1].add_i| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i                                            ; suma_parametrizable     ; work         ;
+;             |suma_posicion:sum_loop[2].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[2].fa               ; suma_posicion           ; work         ;
+;             |suma_posicion:sum_loop[3].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[3].fa               ; suma_posicion           ; work         ;
+;             |suma_posicion:sum_loop[4].fa|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[4].fa               ; suma_posicion           ; work         ;
+;          |suma_parametrizable:gen_pp[2].add_i| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i                                            ; suma_parametrizable     ; work         ;
+;             |suma_posicion:sum_loop[2].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[2].fa               ; suma_posicion           ; work         ;
+;             |suma_posicion:sum_loop[4].fa|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[4].fa               ; suma_posicion           ; work         ;
+;             |suma_posicion:sum_loop[5].fa|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[5].fa               ; suma_posicion           ; work         ;
+;          |suma_parametrizable:gen_pp[3].add_i| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i                                            ; suma_parametrizable     ; work         ;
+;             |suma_posicion:sum_loop[3].fa|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[3].fa               ; suma_posicion           ; work         ;
+;             |suma_posicion:sum_loop[4].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[4].fa               ; suma_posicion           ; work         ;
+;             |suma_posicion:sum_loop[5].fa|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[5].fa               ; suma_posicion           ; work         ;
+;       |restador_parametrizable:u_sub|          ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub                                                                   ; restador_parametrizable ; work         ;
+;          |suma_parametrizable:U1|              ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1                                            ; suma_parametrizable     ; work         ;
+;             |suma_posicion:sum_loop[1].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[1].fa               ; suma_posicion           ; work         ;
+;             |suma_posicion:sum_loop[2].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[2].fa               ; suma_posicion           ; work         ;
+;             |suma_posicion:sum_loop[3].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[3].fa               ; suma_posicion           ; work         ;
+;       |suma_parametrizable:u_add|              ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|suma_parametrizable:u_add                                                                       ; suma_parametrizable     ; work         ;
+;          |suma_posicion:sum_loop[1].fa|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|suma_parametrizable:u_add|suma_posicion:sum_loop[1].fa                                          ; suma_posicion           ; work         ;
+;          |suma_posicion:sum_loop[2].fa|        ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|suma_parametrizable:u_add|suma_posicion:sum_loop[2].fa                                          ; suma_posicion           ; work         ;
+;          |suma_posicion:sum_loop[3].fa|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema1_FPGA_7SEG|Problema1:dut|suma_parametrizable:u_add|suma_posicion:sum_loop[3].fa                                          ; suma_posicion           ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -257,11 +283,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 26    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Clear  ; 1     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 26    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 11    ;
+; Number of registers using Clock Enable       ; 12    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -342,6 +368,56 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Problema1:dut|multiplier:u_mul ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; N              ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                   ;
++----------------+-------+----------------------------------------------------------------------------------------+
+; N              ; 8     ; Signed Integer                                                                         ;
++----------------+-------+----------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------------------+
 ; Parameter Settings for Inferred Entity Instance: Problema1:dut|lpm_divide:Div0 ;
 +------------------------+----------------+--------------------------------------+
@@ -388,6 +464,54 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i"                    ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; B[2..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[7]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; CIN     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i"                    ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; B[7..6] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[1..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; CIN     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i"                    ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; B[7..5] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; CIN     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i"                    ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; A       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; B[7..4] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; CIN     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------+
 ; Port Connectivity Checks: "Problema1:dut|restador_parametrizable:u_sub" ;
 +-----------+-------+----------+------------------------------------------+
@@ -412,31 +536,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 26                          ;
-;     CLR               ; 15                          ;
-;     ENA CLR           ; 11                          ;
-; arriav_lcell_comb     ; 131                         ;
+;     CLR               ; 13                          ;
+;     CLR SCLR          ; 1                           ;
+;     ENA CLR           ; 12                          ;
+; arriav_lcell_comb     ; 160                         ;
 ;     arith             ; 12                          ;
 ;         0 data inputs ; 4                           ;
 ;         2 data inputs ; 2                           ;
 ;         5 data inputs ; 6                           ;
-;     extend            ; 4                           ;
-;         7 data inputs ; 4                           ;
-;     normal            ; 97                          ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 127                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 11                          ;
-;         3 data inputs ; 6                           ;
-;         4 data inputs ; 40                          ;
-;         5 data inputs ; 22                          ;
-;         6 data inputs ; 9                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 44                          ;
+;         5 data inputs ; 14                          ;
+;         6 data inputs ; 31                          ;
 ;     shared            ; 18                          ;
 ;         0 data inputs ; 6                           ;
 ;         2 data inputs ; 6                           ;
 ;         4 data inputs ; 6                           ;
 ; boundary_port         ; 67                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.50                        ;
-; Average LUT depth     ; 5.21                        ;
+; Max LUT depth         ; 10.50                       ;
+; Average LUT depth     ; 5.56                        ;
 +-----------------------+-----------------------------+
 
 
@@ -455,92 +580,94 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Sep 04 11:13:47 2025
+    Info: Processing started: Sun Sep 07 04:11:46 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab2 -c Lab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file suma_posicion.sv
-    Info (12023): Found entity 1: suma_posicion File: C:/Users/ffuch/Documents/Lab2/suma_posicion.sv Line: 1
+    Info (12023): Found entity 1: suma_posicion File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_posicion.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file suma_parametrizable.sv
-    Info (12023): Found entity 1: suma_parametrizable File: C:/Users/ffuch/Documents/Lab2/suma_parametrizable.sv Line: 1
+    Info (12023): Found entity 1: suma_parametrizable File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_parametrizable.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file tb_suma_parametrizable.sv
-    Info (12023): Found entity 1: tb_suma_parametrizable File: C:/Users/ffuch/Documents/Lab2/tb_suma_parametrizable.sv Line: 3
+    Info (12023): Found entity 1: tb_suma_parametrizable File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/tb_suma_parametrizable.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file restador_parametrizable.sv
-    Info (12023): Found entity 1: restador_parametrizable File: C:/Users/ffuch/Documents/Lab2/restador_parametrizable.sv Line: 1
+    Info (12023): Found entity 1: restador_parametrizable File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/restador_parametrizable.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file tb_restador_parametrizable.sv
-    Info (12023): Found entity 1: tb_restador_parametrizable File: C:/Users/ffuch/Documents/Lab2/tb_restador_parametrizable.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file mult_parametrizable.sv
-    Info (12023): Found entity 1: mult_parametrizable File: C:/Users/ffuch/Documents/Lab2/mult_parametrizable.sv Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file tb_mult_parametrizable.sv
-    Info (12023): Found entity 1: tb_mult_parametrizable File: C:/Users/ffuch/Documents/Lab2/tb_mult_parametrizable.sv Line: 3
+    Info (12023): Found entity 1: tb_restador_parametrizable File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/tb_restador_parametrizable.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file problema1.sv
-    Info (12023): Found entity 1: Problema1 File: C:/Users/ffuch/Documents/Lab2/Problema1.sv Line: 1
+    Info (12023): Found entity 1: Problema1 File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file tb_problema1.sv
-    Info (12023): Found entity 1: tb_problema1 File: C:/Users/ffuch/Documents/Lab2/tb_problema1.sv Line: 3
+    Info (12023): Found entity 1: tb_problema1 File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/tb_problema1.sv Line: 3
 Info (12021): Found 0 design units, including 0 entities, in source file tb_problema1_flags.sv
 Info (12021): Found 1 design units, including 1 entities, in source file top_problema1_fpga_7seg.sv
-    Info (12023): Found entity 1: Top_Problema1_FPGA_7SEG File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 1
+    Info (12023): Found entity 1: Top_Problema1_FPGA_7SEG File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file multiplier.sv
+    Info (12023): Found entity 1: multiplier File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/multiplier.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file tb_multiplier.sv
+    Info (12023): Found entity 1: tb_multiplier File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/tb_multiplier.sv Line: 3
 Info (12127): Elaborating entity "Top_Problema1_FPGA_7SEG" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at Top_Problema1_FPGA_7SEG.sv(53): truncated value with size 32 to match size of target (4) File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 53
-Warning (10230): Verilog HDL assignment warning at Top_Problema1_FPGA_7SEG.sv(55): truncated value with size 32 to match size of target (4) File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 55
-Info (12128): Elaborating entity "Problema1" for hierarchy "Problema1:dut" File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 84
-Info (12128): Elaborating entity "suma_parametrizable" for hierarchy "Problema1:dut|suma_parametrizable:u_add" File: C:/Users/ffuch/Documents/Lab2/Problema1.sv Line: 25
-Info (12128): Elaborating entity "suma_posicion" for hierarchy "Problema1:dut|suma_parametrizable:u_add|suma_posicion:sum_loop[0].fa" File: C:/Users/ffuch/Documents/Lab2/suma_parametrizable.sv Line: 23
-Info (12128): Elaborating entity "restador_parametrizable" for hierarchy "Problema1:dut|restador_parametrizable:u_sub" File: C:/Users/ffuch/Documents/Lab2/Problema1.sv Line: 37
+Warning (10230): Verilog HDL assignment warning at Top_Problema1_FPGA_7SEG.sv(54): truncated value with size 32 to match size of target (4) File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 54
+Warning (10230): Verilog HDL assignment warning at Top_Problema1_FPGA_7SEG.sv(56): truncated value with size 32 to match size of target (4) File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 56
+Info (12128): Elaborating entity "Problema1" for hierarchy "Problema1:dut" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 85
+Info (12128): Elaborating entity "suma_parametrizable" for hierarchy "Problema1:dut|suma_parametrizable:u_add" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv Line: 25
+Info (12128): Elaborating entity "suma_posicion" for hierarchy "Problema1:dut|suma_parametrizable:u_add|suma_posicion:sum_loop[0].fa" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_parametrizable.sv Line: 23
+Info (12128): Elaborating entity "restador_parametrizable" for hierarchy "Problema1:dut|restador_parametrizable:u_sub" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv Line: 37
+Info (12128): Elaborating entity "multiplier" for hierarchy "Problema1:dut|multiplier:u_mul" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv Line: 45
+Info (12128): Elaborating entity "suma_parametrizable" for hierarchy "Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/multiplier.sv Line: 32
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Problema1:dut|Div0" File: C:/Users/ffuch/Documents/Lab2/Problema1.sv Line: 49
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Problema1:dut|Mod0" File: C:/Users/ffuch/Documents/Lab2/Problema1.sv Line: 50
-Info (12130): Elaborated megafunction instantiation "Problema1:dut|lpm_divide:Div0" File: C:/Users/ffuch/Documents/Lab2/Problema1.sv Line: 49
-Info (12133): Instantiated megafunction "Problema1:dut|lpm_divide:Div0" with the following parameter: File: C:/Users/ffuch/Documents/Lab2/Problema1.sv Line: 49
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Problema1:dut|Div0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv Line: 58
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Problema1:dut|Mod0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv Line: 59
+Info (12130): Elaborated megafunction instantiation "Problema1:dut|lpm_divide:Div0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv Line: 58
+Info (12133): Instantiated megafunction "Problema1:dut|lpm_divide:Div0" with the following parameter: File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv Line: 58
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_1am.tdf
-    Info (12023): Found entity 1: lpm_divide_1am File: C:/Users/ffuch/Documents/Lab2/db/lpm_divide_1am.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_1am File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/db/lpm_divide_1am.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_7kh File: C:/Users/ffuch/Documents/Lab2/db/sign_div_unsign_7kh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_7kh File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/db/sign_div_unsign_7kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_kse.tdf
-    Info (12023): Found entity 1: alt_u_div_kse File: C:/Users/ffuch/Documents/Lab2/db/alt_u_div_kse.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "Problema1:dut|lpm_divide:Mod0" File: C:/Users/ffuch/Documents/Lab2/Problema1.sv Line: 50
-Info (12133): Instantiated megafunction "Problema1:dut|lpm_divide:Mod0" with the following parameter: File: C:/Users/ffuch/Documents/Lab2/Problema1.sv Line: 50
+    Info (12023): Found entity 1: alt_u_div_kse File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/db/alt_u_div_kse.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "Problema1:dut|lpm_divide:Mod0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv Line: 59
+Info (12133): Instantiated megafunction "Problema1:dut|lpm_divide:Mod0" with the following parameter: File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv Line: 59
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_42m.tdf
-    Info (12023): Found entity 1: lpm_divide_42m File: C:/Users/ffuch/Documents/Lab2/db/lpm_divide_42m.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_42m File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/db/lpm_divide_42m.tdf Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 7
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 7
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
-    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 7
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 7
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 8
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 5
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/ffuch/Documents/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 5
-Info (21057): Implemented 207 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 5
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv Line: 5
+Info (21057): Implemented 236 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 140 logic cells
+    Info (21061): Implemented 169 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 4895 megabytes
-    Info: Processing ended: Thu Sep 04 11:13:53 2025
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 4889 megabytes
+    Info: Processing ended: Sun Sep 07 04:11:55 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:22
 
 

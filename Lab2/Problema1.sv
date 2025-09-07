@@ -35,6 +35,15 @@ module Problema1 #(
         .DIFF       (subResult),
         .BORROW_OUT (subBorrow)
     );
+	 
+	 // --------- MUL (estructural) N x N -> 2N
+    logic [2*WIDTH-1:0] prod_full;
+    multiplier #(.N(WIDTH)) u_mul (
+        .a (A),
+        .b (B),
+        .product (prod_full)
+    );
+
 
     // --------- DIV / MOD (protegidos B==0)
     logic [WIDTH-1:0] Q_div, Q_mod;
@@ -63,57 +72,65 @@ module Problema1 #(
     assign Q_shl = A << 1;
     assign Q_shr = A >> 1;
 
-    // --------- Selector de resultado
-    always_comb begin
-        unique case (opcode)
-            4'b0000: result = addResult; // ADD
-            4'b0001: result = subResult; // SUB
-            4'b0010: result = Q_div;     // DIV
-            4'b0011: result = Q_and;     // AND
-            4'b0100: result = Q_or;      // OR
-            4'b0101: result = Q_xor;     // XOR
-            4'b0110: result = Q_mod;     // MOD
-            4'b0111: result = Q_shl;     // SHL
-            4'b1000: result = Q_shr;     // SHR
-            default: result = '0;
-        endcase
-    end
+	// --------- Selector de resultado
+	always_comb begin
+		 unique case (opcode)
+			  4'b0000: result = addResult;             // ADD
+			  4'b0001: result = subResult;             // SUB
+			  4'b0010: result = prod_full[WIDTH-1:0];  // MUL (truncado a WIDTH)
+			  4'b0011: result = Q_div;                 // DIV
+			  4'b0100: result = Q_and;                 // AND
+			  4'b0101: result = Q_or;                  // OR
+			  4'b0110: result = Q_xor;                 // XOR
+			  4'b0111: result = Q_mod;                 // MOD
+			  4'b1000: result = Q_shl;                 // SHL
+			  4'b1001: result = Q_shr;                 // SHR
+			  default: result = '0;
+		 endcase
+	end
+
 
     // --------- Flags Z y N (sobre el resultado)
     assign Z = (result == '0);
     assign N = result[WIDTH-1];
 
-    // --------- C: depende de la operación
-    always_comb begin
-        C = 1'b0;
-        unique case (opcode)
-            4'b0000: C = addCout;     // ADD
-            4'b0001: C = ~subBorrow;  // SUB (carry = !borrow)
-            4'b0111: C = A[WIDTH-1];  // SHL: bit expulsado por la izquierda
-            4'b1000: C = A[0];        // SHR: bit expulsado por la derecha
-            default: C = 1'b0;
-        endcase
-    end
+	// --------- C: depende de la operación
+	always_comb begin
+		 C = 1'b0;
+		 unique case (opcode)
+			  4'b0000: C = addCout;                     // ADD
+			  4'b0001: C = ~subBorrow;                  // SUB (carry = !borrow)
+			  4'b0010: C = |prod_full[2*WIDTH-1:WIDTH]; // MUL: bits altos no nulos
+			  4'b1000: C = A[WIDTH-1];                  // SHL (bit expulsado a la izq)
+			  4'b1001: C = A[0];                        // SHR (bit expulsado a la der)
+			  default: C = 1'b0;
+		 endcase
+	end
 
-    // --------- V: seleccionable por parámetro
-    // Overflow con signo (estándar):
-    //  ADD: (A_msb==B_msb) && (sum_msb != A_msb)
-    //  SUB: (A_msb!=B_msb) && (diff_msb != A_msb)
-    // Overflow sin signo:
-    //  ADD: V = C ;  SUB: V = ~borrow ; otros: 0
-    localparam int MSB = WIDTH-1;
-    wire V_add_signed = (A[MSB] == B[MSB]) && (addResult[MSB] != A[MSB]);
-    wire V_sub_signed = (A[MSB] != B[MSB]) && (subResult[MSB] != A[MSB]);
 
-    always_comb begin
-        V = 1'b0;
-        unique case (opcode)
-            4'b0000: V = SIGNED_OVF ? V_add_signed : C;          // ADD
-            4'b0001: V = SIGNED_OVF ? V_sub_signed : ~subBorrow; // SUB
-            4'b0010: V = div0;                                    // DIV (error/overflow)
-            default: V = 1'b0;                                    // AND/OR/XOR/MOD/SHL/SHR
-        endcase
-    end
+	// --------- V: seleccionable por parámetro
+	localparam int MSB = WIDTH-1;
+	wire V_add_signed = (A[MSB] == B[MSB]) && (addResult[MSB] != A[MSB]);
+	wire V_sub_signed = (A[MSB] != B[MSB]) && (subResult[MSB] != A[MSB]);
+
+	// Overflow de MUL
+	wire upper_all_zero = ~|prod_full[2*WIDTH-1:WIDTH];
+	wire upper_all_ones =  &prod_full[2*WIDTH-1:WIDTH];
+	wire prod_sign      =  prod_full[2*WIDTH-1];
+	wire V_mul_signed   = !( (prod_sign && upper_all_ones) || (!prod_sign && upper_all_zero) );
+	wire V_mul_unsigned = !upper_all_zero;
+
+	always_comb begin
+		 V = 1'b0;
+		 unique case (opcode)
+			  4'b0000: V = SIGNED_OVF ? V_add_signed   : C;            // ADD
+			  4'b0001: V = SIGNED_OVF ? V_sub_signed   : ~subBorrow;   // SUB
+			  4'b0010: V = SIGNED_OVF ? V_mul_signed   : V_mul_unsigned; // MUL
+			  4'b0011: V = div0;                                       // DIV (divide-by-zero)
+			  default: V = 1'b0;
+		 endcase
+	end
+
 
 endmodule
 

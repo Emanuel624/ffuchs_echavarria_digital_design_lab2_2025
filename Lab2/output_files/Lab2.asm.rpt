@@ -1,5 +1,5 @@
 Assembler report for Lab2
-Thu Sep 04 11:14:48 2025
+Sun Sep 07 04:12:54 2025
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/ffuch/Documents/Lab2/output_files/Lab2.sof
+  5. Assembler Device Options: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/output_files/Lab2.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Sep 04 11:14:48 2025 ;
+; Assembler Status      ; Successful - Sun Sep 07 04:12:54 2025 ;
 ; Revision Name         ; Lab2                                  ;
 ; Top-level Entity Name ; Top_Problema1_FPGA_7SEG               ;
 ; Family                ; Cyclone V                             ;
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+-----------------------------------------------------+
-; Assembler Generated Files                           ;
-+-----------------------------------------------------+
-; File Name                                           ;
-+-----------------------------------------------------+
-; C:/Users/ffuch/Documents/Lab2/output_files/Lab2.sof ;
-+-----------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                         ;
++-----------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                         ;
++-----------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/output_files/Lab2.sof ;
++-----------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ffuch/Documents/Lab2/output_files/Lab2.sof ;
-+----------------+--------------------------------------------------------------+
-; Option         ; Setting                                                      ;
-+----------------+--------------------------------------------------------------+
-; JTAG usercode  ; 0x00B1DA51                                                   ;
-; Checksum       ; 0x00B1DA51                                                   ;
-+----------------+--------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/output_files/Lab2.sof ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                                    ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00B2B411                                                                                                                                 ;
+; Checksum       ; 0x00B2B411                                                                                                                                 ;
++----------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Sep 04 11:14:44 2025
+    Info: Processing started: Sun Sep 07 04:12:48 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Lab2 -c Lab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4850 megabytes
-    Info: Processing ended: Thu Sep 04 11:14:48 2025
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4847 megabytes
+    Info: Processing ended: Sun Sep 07 04:12:54 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 
