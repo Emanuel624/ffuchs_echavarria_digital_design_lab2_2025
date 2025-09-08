@@ -1,0 +1,42 @@
+// CriticalPathHarness.sv
+module CriticalPathHarness #(
+    parameter int WIDTH = 4
+)(
+    input  logic              clk,
+    input  logic              rst_n,     // activo-bajo
+    input  logic [WIDTH-1:0]  din_a,
+    input  logic [WIDTH-1:0]  din_b,
+    input  logic [3:0]        din_op,
+    output logic [WIDTH-1:0]  dout_q     // resultado registrado
+);
+    // FF de entrada
+    logic [WIDTH-1:0] A_q, B_q;
+    logic [3:0]       op_q;
+
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            A_q  <= '0;
+            B_q  <= '0;
+            op_q <= 4'h0; // ADD por defecto
+        end else begin
+            A_q  <= din_a;
+            B_q  <= din_b;
+            op_q <= din_op;
+        end
+    end
+
+    // Lógica combinacional (tu ALU)
+    logic [WIDTH-1:0] result_w;
+    logic N_w, Z_w, C_w, V_w;
+
+    Problema1 #(.WIDTH(WIDTH)) u_alu (
+        .A(A_q), .B(B_q), .opcode(op_q),
+        .result(result_w), .N(N_w), .Z(Z_w), .C(C_w), .V(V_w)
+    );
+
+    // FF de salida
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) dout_q <= '0;
+        else         dout_q <= result_w;
+    end
+endmodule

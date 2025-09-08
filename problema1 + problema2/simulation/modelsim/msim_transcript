@@ -1,0 +1,121 @@
+# Reading pref.tcl
+# do Lab2_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/suma_posicion.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:24:10 on Sep 07,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/suma_posicion.sv 
+# -- Compiling module suma_posicion
+# 
+# Top level modules:
+# 	suma_posicion
+# End time: 23:24:10 on Sep 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/suma_parametrizable.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:24:11 on Sep 07,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/suma_parametrizable.sv 
+# -- Compiling module suma_parametrizable
+# 
+# Top level modules:
+# 	suma_parametrizable
+# End time: 23:24:11 on Sep 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/restador_parametrizable.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:24:11 on Sep 07,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/restador_parametrizable.sv 
+# -- Compiling module restador_parametrizable
+# 
+# Top level modules:
+# 	restador_parametrizable
+# End time: 23:24:11 on Sep 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:24:11 on Sep 07,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv 
+# -- Compiling module Problema1
+# 
+# Top level modules:
+# 	Problema1
+# End time: 23:24:11 on Sep 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Top_Problema1_FPGA_7SEG.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:24:11 on Sep 07,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Top_Problema1_FPGA_7SEG.sv 
+# -- Compiling module Top_Problema1_FPGA_7SEG
+# 
+# Top level modules:
+# 	Top_Problema1_FPGA_7SEG
+# End time: 23:24:11 on Sep 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/multiplier.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:24:11 on Sep 07,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/multiplier.sv 
+# -- Compiling module multiplier
+# 
+# Top level modules:
+# 	multiplier
+# End time: 23:24:11 on Sep 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_problema1.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:24:11 on Sep 07,2025
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2" C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_problema1.sv 
+# -- Compiling module tb_problema1
+# 
+# Top level modules:
+# 	tb_problema1
+# End time: 23:24:11 on Sep 07,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_problema1
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_problema1 
+# Start time: 23:24:11 on Sep 07,2025
+# Loading sv_std.std
+# Loading work.tb_problema1
+# Loading work.Problema1
+# Loading work.suma_parametrizable
+# Loading work.restador_parametrizable
+# Loading work.multiplier
+# Loading work.suma_posicion
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 8, found 4.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_problema1/dut File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_problema1.sv Line: 13
+# ** Warning: (vsim-3722) C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_problema1.sv(13): [TFMPC] - Missing connection for port 'N'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_problema1.sv(13): [TFMPC] - Missing connection for port 'Z'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_problema1.sv(13): [TFMPC] - Missing connection for port 'C'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_problema1.sv(13): [TFMPC] - Missing connection for port 'V'.
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: ffuch  Hostname: FUCHS-LAPTOP  ProcessID: 20604
+#           Attempting to use alternate WLF file "./wlft989chg".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft989chg
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# === Pruebas dirigidas ===
+# === Barrido exhaustivo ===
+# ✅ TODOS LOS TESTS PASARON. Total casos: 2579
+# ** Note: $finish    : C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_problema1.sv(123)
+#    Time: 2580 ns  Iteration: 0  Instance: /tb_problema1
+# 1
+# Break in Module tb_problema1 at C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_problema1.sv line 123
+# End time: 23:24:29 on Sep 07,2025, Elapsed time: 0:00:18
+# Errors: 0, Warnings: 7
