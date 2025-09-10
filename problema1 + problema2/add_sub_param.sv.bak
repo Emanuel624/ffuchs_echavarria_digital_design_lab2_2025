@@ -1,0 +1,23 @@
+module add_sub_param #(parameter int N = 4)(
+    input  logic [N-1:0] A,
+    input  logic [N-1:0] B,
+    input  logic mode,               // 0 = suma, 1 = resta
+    output logic [N-1:0] result,
+    output logic Cout
+);
+
+    logic [N-1:0] B_mod;
+
+    // Si mode=1 (resta) -> invierto B
+    assign B_mod = B ^ {N{mode}};  
+
+    // Llamamos al sumador parametrizable
+    suma_parametrizable #(.N(N)) U1 (
+        .A(A),
+        .B(B_mod),
+        .CIN(mode),          // mode=1 => suma +1 para complemento a dos
+        .suma(result),
+        .cout(Cout)
+    );
+
+endmodule

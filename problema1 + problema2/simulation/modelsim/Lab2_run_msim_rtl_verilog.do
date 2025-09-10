@@ -1,0 +1,22 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/suma_posicion.sv}
+vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/suma_parametrizable.sv}
+vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/restador_parametrizable.sv}
+vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv}
+vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Top_Problema1_FPGA_7SEG.sv}
+vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/multiplier.sv}
+
+vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/TEC\ II\ 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1\ +\ problema2 {C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_problema1.sv}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_problema1
+
+add wave *
+view structure
+view signals
+run -all
