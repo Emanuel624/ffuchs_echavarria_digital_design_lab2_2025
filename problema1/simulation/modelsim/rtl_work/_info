@@ -1,0 +1,195 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/simulation/modelsim
+vmultiplier
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1757239007
+!i10b 1
+!s100 z1Q=ZKE^;A5z_G6ez5`FR3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IXj23fa0TIUo4_XLdU<HfU1
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1757237504
+8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/multiplier.sv
+FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/multiplier.sv
+!i122 5
+L0 4 35
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1757239007.000000
+!s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/multiplier.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/multiplier.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work {+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2}
+Z9 tCvgOpt 0
+vProblema1
+R1
+R2
+!i10b 1
+!s100 QDKZh1m>ofW?K[cibaYlK3
+R3
+IQX@G8[O^[QFFoAliooXMk0
+R4
+S1
+R0
+w1757238877
+8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv
+FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv
+!i122 3
+L0 1 135
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Problema1.sv|
+!i113 1
+R7
+R8
+R9
+n@problema1
+vrestador_parametrizable
+R1
+R2
+!i10b 1
+!s100 hLUjBCfT^i1GO6[Ma>YP=2
+R3
+I>K3l_0cgV=o?zd;EP@N3Y1
+R4
+S1
+R0
+Z10 w1757218380
+8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/restador_parametrizable.sv
+FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/restador_parametrizable.sv
+!i122 2
+L0 1 28
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/restador_parametrizable.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/restador_parametrizable.sv|
+!i113 1
+R7
+R8
+R9
+vsuma_parametrizable
+R1
+R2
+!i10b 1
+!s100 MUO^3JiiOM9o:^M_Mji311
+R3
+I?f?B`]ijk8eYS^_i=1YVM3
+R4
+S1
+R0
+R10
+8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_parametrizable.sv
+FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_parametrizable.sv
+!i122 1
+L0 1 40
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_parametrizable.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_parametrizable.sv|
+!i113 1
+R7
+R8
+R9
+vsuma_posicion
+R1
+R2
+!i10b 1
+!s100 294zAU=IoXm<D=S_6i?dZ1
+R3
+IfIR;NVnOPicRiGjM1_i5P1
+R4
+S1
+R0
+R10
+8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_posicion.sv
+FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_posicion.sv
+!i122 0
+L0 1 10
+R5
+r1
+!s85 0
+31
+!s108 1757239006.000000
+!s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_posicion.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/suma_posicion.sv|
+!i113 1
+R7
+R8
+R9
+vtb_problema1
+R1
+R2
+!i10b 1
+!s100 CzMeWI0Dz2CeFO<^V5g=?3
+R3
+I;QiAd5OAeOE>8bKdl]J1]3
+R4
+S1
+R0
+w1757238990
+8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/tb_problema1.sv
+FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/tb_problema1.sv
+!i122 6
+L0 3 123
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/tb_problema1.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/tb_problema1.sv|
+!i113 1
+R7
+R8
+R9
+vTop_Problema1_FPGA_7SEG
+R1
+R2
+!i10b 1
+!s100 2d1QlAd;VS6bH_Bi@>XM>2
+R3
+IZJ;bR^meHLk?U7n`M_@]e3
+R4
+S1
+R0
+R10
+8C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv
+FC:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv
+!i122 4
+L0 1 153
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2|C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/Lab2/Top_Problema1_FPGA_7SEG.sv|
+!i113 1
+R7
+R8
+R9
+n@top_@problema1_@f@p@g@a_7@s@e@g

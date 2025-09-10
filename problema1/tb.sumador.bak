@@ -1,0 +1,49 @@
+`timescale 1ns/1ps
+
+module tb_suma_parametrizable;
+
+    parameter int N = 4;
+
+    // Entradas
+    logic [N-1:0] A;
+    logic [N-1:0] B;
+    logic CIN;
+
+    // Salidas
+    logic [N-1:0] suma;
+    logic cout;
+
+    // Instancia del módulo a probar
+    suma_parametrizable #(N) UUT (
+        .A(A),
+        .B(B),
+        .CIN(CIN),
+        .suma(suma),
+        .cout(cout)
+    );
+
+    initial begin
+        $display("A     B     CIN | SUMA   COUT");
+        $display("----------------|----------------");
+
+        // Prueba 1
+        A = 4'b0001; B = 4'b0011; CIN = 1'b0;
+        #10 $display("%b %b  %b  | %b   %b", A, B, CIN, suma, cout);
+
+        // Prueba 2
+        A = 4'b0101; B = 4'b0011; CIN = 1'b1;
+        #10 $display("%b %b  %b  | %b   %b", A, B, CIN, suma, cout);
+
+        // Prueba 3
+        A = 4'b1111; B = 4'b0001; CIN = 1'b0;
+        #10 $display("%b %b  %b  | %b   %b", A, B, CIN, suma, cout);
+
+        // Prueba 4
+        A = 4'b1010; B = 4'b0101; CIN = 1'b0;
+        #10 $display("%b %b  %b  | %b   %b", A, B, CIN, suma, cout);
+
+        // Fin de simulación
+        #10 $finish;
+    end
+
+endmodule

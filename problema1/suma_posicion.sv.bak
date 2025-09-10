@@ -1,0 +1,6 @@
+module suma_posicion (input logic A, input logic B, input logic Carry, output suma, output Cout);
+
+	assign suma = A^B^Carry;
+	assign Cout = (A&B)|(A&Carry)|(B&Carry);
+	
+endmodule

@@ -1,0 +1,178 @@
+// synthesis translate_off
+// synopsys translate_off
+`timescale 1ns/1ps
+
+module tb_problema1_flags;
+    localparam int WIDTH = 4;
+    localparam int MASK  = (1<<WIDTH)-1;
+
+    // DUT I/O
+    logic [WIDTH-1:0] A, B;
+    logic [3:0]       opcode;
+    wire  [WIDTH-1:0] result;
+    wire              N, Z, C, V;
+
+    // Instancia del DUT
+    Problema1 #(.WIDTH(WIDTH)) dut (
+        .A(A), .B(B), .opcode(opcode),
+        .result(result),
+        .N(N), .Z(Z), .C(C), .V(V)
+    );
+
+    // Mapeo de opcodes (igual a tu diseño)
+    localparam logic [3:0]
+        OP_ADD = 4'b0000,
+        OP_SUB = 4'b0001,
+        OP_DIV = 4'b0010,
+        OP_AND = 4'b0011,
+        OP_OR  = 4'b0100,
+        OP_XOR = 4'b0101,
+        OP_MOD = 4'b0110,
+        OP_SHL = 4'b0111, // <<1
+        OP_SHR = 4'b1000; // >>1
+
+    // ---------- Modelo de resultado ----------
+    function automatic logic [WIDTH-1:0] model_result(
+        input logic [3:0]       op,
+        input logic [WIDTH-1:0] a,
+        input logic [WIDTH-1:0] b
+    );
+        logic [WIDTH-1:0] y;
+        case (op)
+            OP_ADD: y = (a + b);
+            OP_SUB: y = (a - b);
+            OP_DIV: y = (b == '0) ? '0 : (a / b);
+            OP_AND: y = a & b;
+            OP_OR : y = a | b;
+            OP_XOR: y = a ^ b;
+            OP_MOD: y = (b == '0) ? '0 : (a % b);
+            OP_SHL: y = (a << 1);
+            OP_SHR: y = (a >> 1);
+            default: y = '0;
+        endcase
+        return y & MASK;
+    endfunction
+
+    // ---------- Modelo de flags ----------
+    function automatic void model_flags(
+        input  logic [3:0]       op,
+        input  logic [WIDTH-1:0] a,
+        input  logic [WIDTH-1:0] b,
+        input  logic [WIDTH-1:0] y,
+        output logic Nexp, Zexp, Cexp, Vexp
+    );
+        logic sA = a[WIDTH-1];
+        logic sB = b[WIDTH-1];
+        logic sY = y[WIDTH-1];
+
+        // Z/N por defecto sobre y
+        Nexp = sY;
+        Zexp = (y == '0);
+        Cexp = 1'b0;
+        Vexp = 1'b0;
+
+        unique case (op)
+            OP_ADD: begin
+                logic [WIDTH:0] wsum = {1'b0, a} + {1'b0, b};
+                Cexp = wsum[WIDTH];                          // carry sin signo
+                Vexp = (sA == sB) && (sY != sA);             // overflow 2C
+            end
+            OP_SUB: begin
+                Cexp = (a >= b);                             // ~borrow
+                Vexp = (sA != sB) && (sY != sA);             // overflow 2C
+            end
+            OP_DIV: begin
+                Cexp = 1'b0;
+                Vexp = (b == '0);                            // div por cero
+            end
+            OP_AND, OP_OR, OP_XOR, OP_MOD: begin
+                Cexp = 1'b0; Vexp = 1'b0;
+            end
+            OP_SHL: begin
+                Cexp = a[WIDTH-1]; Vexp = 1'b0;              // bit expulsado
+            end
+            OP_SHR: begin
+                Cexp = a[0];       Vexp = 1'b0;
+            end
+            default: begin
+                Cexp = 1'b0; Vexp = 1'b0;
+            end
+        endcase
+    endfunction
+
+    // ---------- Infra de test ----------
+    int total = 0, errors = 0;
+
+    task automatic check_case(input logic [3:0] op, input int ai, bi);
+        logic [WIDTH-1:0] a4 = logic'(ai[WIDTH-1:0]);
+        logic [WIDTH-1:0] b4 = logic'(bi[WIDTH-1:0]);
+        logic [WIDTH-1:0] yexp;
+        logic Nexp, Zexp, Cexp, Vexp;
+        begin
+            A = a4; B = b4; opcode = op; #1; // combinacional
+            yexp = model_result(op, a4, b4);
+            model_flags(op, a4, b4, yexp, Nexp, Zexp, Cexp, Vexp);
+
+            total++;
+            if (result !== yexp || N!==Nexp || Z!==Zexp || C!==Cexp || V!==Vexp) begin
+                $error("OP=%b A=%0d(0x%0h) B=%0d(0x%0h) -> DUT R=0x%0h N=%0b Z=%0b C=%0b V=%0b | EXP R=0x%0h N=%0b Z=%0b C=%0b V=%0b",
+                       op, a4, a4, b4, b4,
+                       result, N, Z, C, V,
+                       yexp,  Nexp, Zexp, Cexp, Vexp);
+                errors++;
+            end
+        end
+    endtask
+
+    // ---------- Escenarios ----------
+    initial begin
+    `ifndef SYNTHESIS
+        $dumpfile("tb_problema1_flags.vcd");
+        $dumpvars(0, tb_problema1_flags);
+    `endif
+
+        $display("=== Pruebas dirigidas (flags) ===");
+        // ADD
+        check_case(OP_ADD,  7,  1);   // 0111+0001=1000: C=0, V=1
+        check_case(OP_ADD,  8,  8);   // 1000+1000=0000: C=1, V=1
+        check_case(OP_ADD, 15,  1);   // 1111+0001=0000: C=1, V=0
+        // SUB
+        check_case(OP_SUB,  8,  1);   // 1000-0001=0111: C=1, V=1
+        check_case(OP_SUB,  1,  8);   // 0001-1000=1001: C=0, V=1
+        check_case(OP_SUB,  7,  7);   // =0: C=1, V=0
+        // DIV
+        check_case(OP_DIV, 15,  3);   // 5: V=0
+        check_case(OP_DIV, 10,  0);   // div0: V=1
+        // MOD
+        check_case(OP_MOD, 15,  4);   // 3: V=0
+        check_case(OP_MOD,  9,  0);   // mod0: V=0
+        // AND / OR / XOR
+        check_case(OP_AND, 'hA, 'h3);
+        check_case(OP_OR , 'hA, 'h3);
+        check_case(OP_XOR, 'hA, 'h3);
+        // SHL / SHR
+        check_case(OP_SHL, 'h9,  0);  // C=1 por MSB expulsado
+        check_case(OP_SHR, 'h9,  0);  // C=1 por LSB expulsado
+
+        $display("=== Barrido exhaustivo (todos los opcodes, A,B=0..15) ===");
+        for (int opi = 0; opi <= 8; opi++) begin
+            logic [3:0] op;
+            op = opi[3:0];
+            for (int ai = 0; ai < (1<<WIDTH); ai++) begin
+                for (int bi = 0; bi < (1<<WIDTH); bi++) begin
+                    check_case(op, ai, bi);
+                end
+            end
+        end
+
+        if (errors==0)
+            $display("✅ TODOS LOS TESTS DE FLAGS PASARON. Casos: %0d", total);
+        else
+            $display("❌ %0d errores de %0d casos.", errors, total);
+
+        $finish;
+    end
+endmodule
+// synopsys translate_on
+// synthesis translate_on
+

@@ -1,0 +1,340 @@
+|Top_Problema2_Minimo
+CLOCK_50 => CLOCK_50.IN1
+SW[0] => A_sw[0].IN1
+SW[1] => A_sw[1].IN1
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => B_sw[0].IN1
+SW[5] => OP_sw[0].IN2
+SW[6] => OP_sw[1].IN1
+SW[7] => ~NO_FANOUT~
+SW[8] => OP_sw[2].IN1
+SW[9] => OP_sw[3].IN1
+KEY[0] => ~NO_FANOUT~
+KEY[1] => rst_n.IN1
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+LEDR[0] <= CriticalPathHarness:u_harness.dout_q
+LEDR[1] <= CriticalPathHarness:u_harness.dout_q
+LEDR[2] <= <GND>
+LEDR[3] <= <GND>
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness
+clk => dout_q[0]~reg0.CLK
+clk => dout_q[1]~reg0.CLK
+clk => op_q[0].CLK
+clk => op_q[1].CLK
+clk => op_q[2].CLK
+clk => op_q[3].CLK
+clk => B_q[0].CLK
+clk => B_q[1].CLK
+clk => A_q[0].CLK
+clk => A_q[1].CLK
+rst_n => op_q[0].ACLR
+rst_n => op_q[1].ACLR
+rst_n => op_q[2].ACLR
+rst_n => op_q[3].ACLR
+rst_n => B_q[0].ACLR
+rst_n => B_q[1].ACLR
+rst_n => A_q[0].ACLR
+rst_n => A_q[1].ACLR
+rst_n => dout_q[0]~reg0.ACLR
+rst_n => dout_q[1]~reg0.ACLR
+din_a[0] => A_q[0].DATAIN
+din_a[1] => A_q[1].DATAIN
+din_b[0] => B_q[0].DATAIN
+din_b[1] => B_q[1].DATAIN
+din_op[0] => op_q[0].DATAIN
+din_op[1] => op_q[1].DATAIN
+din_op[2] => op_q[2].DATAIN
+din_op[3] => op_q[3].DATAIN
+dout_q[0] <= dout_q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout_q[1] <= dout_q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu
+A[0] => A[0].IN3
+A[1] => A[1].IN3
+B[0] => B[0].IN3
+B[1] => B[1].IN3
+opcode[0] => Mux0.IN11
+opcode[0] => Mux1.IN11
+opcode[0] => Mux2.IN18
+opcode[0] => Mux3.IN15
+opcode[1] => Mux0.IN10
+opcode[1] => Mux1.IN10
+opcode[1] => Mux2.IN17
+opcode[1] => Mux3.IN14
+opcode[2] => Mux0.IN9
+opcode[2] => Mux1.IN9
+opcode[2] => Mux2.IN16
+opcode[2] => Mux3.IN13
+opcode[3] => Mux0.IN8
+opcode[3] => Mux1.IN8
+opcode[3] => Mux2.IN15
+opcode[3] => Mux3.IN12
+result[0] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+N <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Z <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+C <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+V <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|suma_parametrizable:u_add
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+CIN => CIN.IN1
+suma[0] <= suma_posicion:sum_loop[0].fa.suma
+suma[1] <= suma_posicion:sum_loop[1].fa.suma
+cout <= suma_posicion:sum_loop[1].fa.Cout
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|suma_parametrizable:u_add|suma_posicion:sum_loop[0].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|suma_parametrizable:u_add|suma_posicion:sum_loop[1].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+B[0] => B_comp[0].IN1
+B[1] => B_comp[1].IN1
+BORROW_IN => _.IN1
+DIFF[0] <= suma_parametrizable:U1.suma
+DIFF[1] <= suma_parametrizable:U1.suma
+BORROW_OUT <= suma_parametrizable:U1.cout
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub|suma_parametrizable:U1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+CIN => CIN.IN1
+suma[0] <= suma_posicion:sum_loop[0].fa.suma
+suma[1] <= suma_posicion:sum_loop[1].fa.suma
+cout <= suma_posicion:sum_loop[1].fa.Cout
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[0].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[1].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul
+a[0] => partial.DATAB
+a[0] => partial.DATAB
+a[1] => partial.DATAB
+a[1] => partial.DATAB
+b[0] => partial.OUTPUTSELECT
+b[0] => partial.OUTPUTSELECT
+b[1] => partial.OUTPUTSELECT
+b[1] => partial.OUTPUTSELECT
+product[0] <= suma_parametrizable:gen_pp[1].add_i.suma
+product[1] <= suma_parametrizable:gen_pp[1].add_i.suma
+product[2] <= suma_parametrizable:gen_pp[1].add_i.suma
+product[3] <= suma_parametrizable:gen_pp[1].add_i.suma
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+CIN => CIN.IN1
+suma[0] <= suma_posicion:sum_loop[0].fa.suma
+suma[1] <= suma_posicion:sum_loop[1].fa.suma
+suma[2] <= suma_posicion:sum_loop[2].fa.suma
+suma[3] <= suma_posicion:sum_loop[3].fa.suma
+cout <= suma_posicion:sum_loop[3].fa.Cout
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[0].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[1].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[2].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[3].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+CIN => CIN.IN1
+suma[0] <= suma_posicion:sum_loop[0].fa.suma
+suma[1] <= suma_posicion:sum_loop[1].fa.suma
+suma[2] <= suma_posicion:sum_loop[2].fa.suma
+suma[3] <= suma_posicion:sum_loop[3].fa.suma
+cout <= suma_posicion:sum_loop[3].fa.Cout
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[0].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[1].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[2].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[3].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

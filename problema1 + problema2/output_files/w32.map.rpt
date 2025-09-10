@@ -1,0 +1,1364 @@
+Analysis & Synthesis report for w32
+Mon Sep 08 05:13:48 2025
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |Top_Problema2_Minimo
+ 12. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness
+ 13. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu
+ 14. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|suma_parametrizable:u_add
+ 15. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub
+ 16. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub|suma_parametrizable:U1
+ 17. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul
+ 18. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i
+ 19. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i
+ 20. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i
+ 21. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i
+ 22. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[4].add_i
+ 23. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[5].add_i
+ 24. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[6].add_i
+ 25. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[7].add_i
+ 26. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[8].add_i
+ 27. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[9].add_i
+ 28. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[10].add_i
+ 29. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[11].add_i
+ 30. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[12].add_i
+ 31. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[13].add_i
+ 32. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[14].add_i
+ 33. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[15].add_i
+ 34. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[16].add_i
+ 35. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[17].add_i
+ 36. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[18].add_i
+ 37. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[19].add_i
+ 38. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[20].add_i
+ 39. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[21].add_i
+ 40. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[22].add_i
+ 41. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[23].add_i
+ 42. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[24].add_i
+ 43. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[25].add_i
+ 44. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[26].add_i
+ 45. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[27].add_i
+ 46. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[28].add_i
+ 47. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[29].add_i
+ 48. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[30].add_i
+ 49. Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[31].add_i
+ 50. Parameter Settings for Inferred Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Div0
+ 51. Parameter Settings for Inferred Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Mod0
+ 52. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[31].add_i"
+ 53. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[30].add_i"
+ 54. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[29].add_i"
+ 55. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[28].add_i"
+ 56. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[27].add_i"
+ 57. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[26].add_i"
+ 58. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[25].add_i"
+ 59. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[24].add_i"
+ 60. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[23].add_i"
+ 61. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[22].add_i"
+ 62. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[21].add_i"
+ 63. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[20].add_i"
+ 64. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[19].add_i"
+ 65. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[18].add_i"
+ 66. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[17].add_i"
+ 67. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[16].add_i"
+ 68. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[15].add_i"
+ 69. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[14].add_i"
+ 70. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[13].add_i"
+ 71. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[12].add_i"
+ 72. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[11].add_i"
+ 73. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[10].add_i"
+ 74. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[9].add_i"
+ 75. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[8].add_i"
+ 76. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[7].add_i"
+ 77. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[6].add_i"
+ 78. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[5].add_i"
+ 79. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[4].add_i"
+ 80. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i"
+ 81. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i"
+ 82. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i"
+ 83. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i"
+ 84. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub"
+ 85. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|suma_parametrizable:u_add"
+ 86. Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu"
+ 87. Port Connectivity Checks: "CriticalPathHarness:u_harness"
+ 88. Post-Synthesis Netlist Statistics for Top Partition
+ 89. Elapsed Time Per Partition
+ 90. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Sep 08 05:13:48 2025       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; w32                                         ;
+; Top-level Entity Name           ; Top_Problema2_Minimo                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 20                                          ;
+; Total pins                      ; 25                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                               ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+; Option                                                                          ; Setting              ; Default Value      ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6       ;                    ;
+; Top-level entity name                                                           ; Top_Problema2_Minimo ; w32                ;
+; Family name                                                                     ; Cyclone V            ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                  ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                   ; On                 ;
+; Enable compact report table                                                     ; Off                  ; Off                ;
+; Restructure Multiplexers                                                        ; Auto                 ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                  ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                  ; Off                ;
+; Preserve fewer node names                                                       ; On                   ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable               ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001         ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993            ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto                 ; Auto               ;
+; Safe State Machine                                                              ; Off                  ; Off                ;
+; Extract Verilog State Machines                                                  ; On                   ; On                 ;
+; Extract VHDL State Machines                                                     ; On                   ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                  ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000                 ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                  ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                   ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                   ; On                 ;
+; Parallel Synthesis                                                              ; On                   ; On                 ;
+; DSP Block Balancing                                                             ; Auto                 ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                   ; On                 ;
+; Power-Up Don't Care                                                             ; On                   ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                  ; Off                ;
+; Remove Duplicate Registers                                                      ; On                   ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                  ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                  ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                  ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                  ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                  ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                   ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                  ; Off                ;
+; Optimization Technique                                                          ; Balanced             ; Balanced           ;
+; Carry Chain Length                                                              ; 70                   ; 70                 ;
+; Auto Carry Chains                                                               ; On                   ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                   ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                  ; Off                ;
+; Auto ROM Replacement                                                            ; On                   ; On                 ;
+; Auto RAM Replacement                                                            ; On                   ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                   ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto                 ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                 ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                   ; On                 ;
+; Strict RAM Replacement                                                          ; Off                  ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                   ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                  ; Off                ;
+; Auto Resource Sharing                                                           ; Off                  ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                  ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                  ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                  ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                   ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                  ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                   ; On                 ;
+; Report Parameter Settings                                                       ; On                   ; On                 ;
+; Report Source Assignments                                                       ; On                   ; On                 ;
+; Report Connectivity Checks                                                      ; On                   ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                  ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                    ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation   ; Normal compilation ;
+; HDL message level                                                               ; Level2               ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                  ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                 ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                 ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                  ; 100                ;
+; Clock MUX Protection                                                            ; On                   ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                  ; Off                ;
+; Block Design Naming                                                             ; Auto                 ; Auto               ;
+; SDC constraint protection                                                       ; Off                  ; Off                ;
+; Synthesis Effort                                                                ; Auto                 ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                   ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                  ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium               ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                 ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                   ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                   ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                  ; Off                ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processors 8-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                            ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; suma_posicion.sv                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/suma_posicion.sv           ;         ;
+; suma_parametrizable.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/suma_parametrizable.sv     ;         ;
+; restador_parametrizable.sv       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/restador_parametrizable.sv ;         ;
+; Problema1.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv               ;         ;
+; multiplier.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/multiplier.sv              ;         ;
+; CriticalPathHarness.sv           ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/CriticalPathHarness.sv     ;         ;
+; Top_Problema2_Minimo.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Top_Problema2_Minimo.sv    ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                                                   ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc                                                                                  ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                                              ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                                                                                   ;         ;
+; db/lpm_divide_3dm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/db/lpm_divide_3dm.tdf      ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/db/sign_div_unsign_9nh.tdf ;         ;
+; db/alt_u_div_o2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/db/alt_u_div_o2f.tdf       ;         ;
+; db/lpm_divide_65m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/db/lpm_divide_65m.tdf      ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                        ;
++---------------------------------------------+--------------------------------------+
+; Resource                                    ; Usage                                ;
++---------------------------------------------+--------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 1312                                 ;
+;                                             ;                                      ;
+; Combinational ALUT usage for logic          ; 2562                                 ;
+;     -- 7 input functions                    ; 9                                    ;
+;     -- 6 input functions                    ; 50                                   ;
+;     -- 5 input functions                    ; 354                                  ;
+;     -- 4 input functions                    ; 799                                  ;
+;     -- <=3 input functions                  ; 1350                                 ;
+;                                             ;                                      ;
+; Dedicated logic registers                   ; 20                                   ;
+;                                             ;                                      ;
+; I/O pins                                    ; 25                                   ;
+;                                             ;                                      ;
+; Total DSP Blocks                            ; 0                                    ;
+;                                             ;                                      ;
+; Maximum fan-out node                        ; CriticalPathHarness:u_harness|B_q[2] ;
+; Maximum fan-out                             ; 98                                   ;
+; Total fan-out                               ; 9011                                 ;
+; Average fan-out                             ; 3.42                                 ;
++---------------------------------------------+--------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                       ;
++---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                 ; Entity Name             ; Library Name ;
++---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; |Top_Problema2_Minimo                             ; 2562 (0)            ; 20 (0)                    ; 0                 ; 0          ; 25   ; 0            ; |Top_Problema2_Minimo                                                                                                                                               ; Top_Problema2_Minimo    ; work         ;
+;    |CriticalPathHarness:u_harness|                ; 2562 (4)            ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness                                                                                                                 ; CriticalPathHarness     ; work         ;
+;       |Problema1:u_alu|                           ; 2558 (40)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu                                                                                                 ; Problema1               ; work         ;
+;          |lpm_divide:Div0|                        ; 1248 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Div0                                                                                 ; lpm_divide              ; work         ;
+;             |lpm_divide_3dm:auto_generated|       ; 1248 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Div0|lpm_divide_3dm:auto_generated                                                   ; lpm_divide_3dm          ; work         ;
+;                |sign_div_unsign_9nh:divider|      ; 1248 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Div0|lpm_divide_3dm:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh     ; work         ;
+;                   |alt_u_div_o2f:divider|         ; 1248 (1248)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Div0|lpm_divide_3dm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_o2f:divider ; alt_u_div_o2f           ; work         ;
+;          |lpm_divide:Mod0|                        ; 1249 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Mod0                                                                                 ; lpm_divide              ; work         ;
+;             |lpm_divide_65m:auto_generated|       ; 1249 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Mod0|lpm_divide_65m:auto_generated                                                   ; lpm_divide_65m          ; work         ;
+;                |sign_div_unsign_9nh:divider|      ; 1249 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Mod0|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh     ; work         ;
+;                   |alt_u_div_o2f:divider|         ; 1249 (1249)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Mod0|lpm_divide_65m:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_o2f:divider ; alt_u_div_o2f           ; work         ;
+;          |multiplier:u_mul|                       ; 19 (3)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul                                                                                ; multiplier              ; work         ;
+;             |suma_parametrizable:gen_pp[1].add_i| ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i                                            ; suma_parametrizable     ; work         ;
+;                |suma_posicion:sum_loop[2].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[2].fa               ; suma_posicion           ; work         ;
+;                |suma_posicion:sum_loop[3].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[3].fa               ; suma_posicion           ; work         ;
+;                |suma_posicion:sum_loop[4].fa|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[4].fa               ; suma_posicion           ; work         ;
+;             |suma_parametrizable:gen_pp[2].add_i| ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i                                            ; suma_parametrizable     ; work         ;
+;                |suma_posicion:sum_loop[2].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[2].fa               ; suma_posicion           ; work         ;
+;                |suma_posicion:sum_loop[3].fa|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[3].fa               ; suma_posicion           ; work         ;
+;                |suma_posicion:sum_loop[4].fa|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[4].fa               ; suma_posicion           ; work         ;
+;                |suma_posicion:sum_loop[5].fa|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[5].fa               ; suma_posicion           ; work         ;
+;             |suma_parametrizable:gen_pp[3].add_i| ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i                                            ; suma_parametrizable     ; work         ;
+;                |suma_posicion:sum_loop[3].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[3].fa               ; suma_posicion           ; work         ;
+;                |suma_posicion:sum_loop[4].fa|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[4].fa               ; suma_posicion           ; work         ;
+;                |suma_posicion:sum_loop[5].fa|     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[5].fa               ; suma_posicion           ; work         ;
+;          |restador_parametrizable:u_sub|          ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub                                                                   ; restador_parametrizable ; work         ;
+;             |suma_parametrizable:U1|              ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub|suma_parametrizable:U1                                            ; suma_parametrizable     ; work         ;
+;                |suma_posicion:sum_loop[2].fa|     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[2].fa               ; suma_posicion           ; work         ;
+;          |suma_parametrizable:u_add|              ; 1 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|suma_parametrizable:u_add                                                                       ; suma_parametrizable     ; work         ;
+;             |suma_posicion:sum_loop[2].fa|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|Problema1:u_alu|suma_parametrizable:u_add|suma_posicion:sum_loop[2].fa                                          ; suma_posicion           ; work         ;
++---------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                          ;
++------------------------------------------+--------------------------------------------------+
+; Register name                            ; Reason for Removal                               ;
++------------------------------------------+--------------------------------------------------+
+; CriticalPathHarness:u_harness|A_q[4..31] ; Stuck at GND due to stuck port data_in           ;
+; CriticalPathHarness:u_harness|B_q[4..31] ; Stuck at GND due to stuck port data_in           ;
+; CriticalPathHarness:u_harness|op_q[1]    ; Merged with CriticalPathHarness:u_harness|B_q[2] ;
+; CriticalPathHarness:u_harness|op_q[0]    ; Merged with CriticalPathHarness:u_harness|B_q[1] ;
+; Total Number of Removed Registers = 58   ;                                                  ;
++------------------------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 20    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 20    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|dout_q[8] ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |Top_Problema2_Minimo|CriticalPathHarness:u_harness|dout_q[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Top_Problema2_Minimo ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; WIDTH          ; 32    ; Signed Integer                                                    ;
+; SIGNED_OVF     ; 1     ; Unsigned Binary                                                   ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|suma_parametrizable:u_add ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub|suma_parametrizable:U1 ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                                                                         ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                         ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                         ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                         ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                         ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[4].add_i ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                         ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[5].add_i ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                         ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[6].add_i ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                         ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[7].add_i ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                         ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[8].add_i ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                         ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[9].add_i ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                   ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                         ;
++----------------+-------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[10].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[11].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[12].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[13].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[14].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[15].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[16].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[17].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[18].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[19].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[20].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[21].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[22].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[23].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[24].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[25].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[26].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[27].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[28].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[29].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[30].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[31].add_i ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                    ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+; N              ; 64    ; Signed Integer                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                              ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                              ;
+; CBXI_PARAMETER         ; lpm_divide_3dm ; Untyped                                                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                       ;
++------------------------+----------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                 ;
++------------------------+----------------+----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                              ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                              ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                              ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                              ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                              ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                              ;
+; CBXI_PARAMETER         ; lpm_divide_65m ; Untyped                                                              ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                              ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                              ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                       ;
++------------------------+----------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[31].add_i" ;
++----------+--------+----------+--------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                          ;
++----------+--------+----------+--------------------------------------------------------------------------------------------------+
+; B[30..0] ; Input  ; Info     ; Stuck at GND                                                                                     ;
+; B[63]    ; Input  ; Info     ; Stuck at GND                                                                                     ;
+; CIN      ; Input  ; Info     ; Stuck at GND                                                                                     ;
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.              ;
++----------+--------+----------+--------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[30].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..62] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[29..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[29].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..61] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[28..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[28].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..60] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[27..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[27].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..59] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[26..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[26].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..58] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[25..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[25].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..57] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[24..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[24].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..56] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[23..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[23].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..55] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[22..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[22].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..54] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[21..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[21].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..53] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[20..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[20].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..52] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[19..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[19].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..51] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[18..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[18].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..50] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[17..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[17].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..49] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[16..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[16].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..48] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[15..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[15].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..47] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[14..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[14].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..46] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[13..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[13].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..45] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[12..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[12].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..44] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[11..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[11].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..43] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[10..0]  ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[10].add_i" ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                         ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+; B[63..42] ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; B[9..0]   ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                    ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[9].add_i" ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                        ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; B[63..41] ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; B[8..0]   ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[8].add_i" ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                        ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; B[63..40] ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; B[7..0]   ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[7].add_i" ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                        ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; B[63..39] ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; B[6..0]   ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[6].add_i" ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                        ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; B[63..38] ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; B[5..0]   ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[5].add_i" ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                        ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; B[63..37] ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; B[4..0]   ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[4].add_i" ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                        ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; B[63..36] ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; B[3..0]   ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i" ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                        ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; B[63..35] ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; B[2..0]   ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i" ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                        ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; B[63..34] ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; B[1..0]   ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i" ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                        ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; B[63..33] ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; B[0]      ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i" ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                        ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+; A         ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; B[63..32] ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; CIN       ; Input  ; Info     ; Stuck at GND                                                                                   ;
+; cout      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub" ;
++-----------+-------+----------+--------------------------------------------------------------------------+
+; Port      ; Type  ; Severity ; Details                                                                  ;
++-----------+-------+----------+--------------------------------------------------------------------------+
+; BORROW_IN ; Input ; Info     ; Stuck at GND                                                             ;
++-----------+-------+----------+--------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu|suma_parametrizable:u_add" ;
++------+-------+----------+---------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                   ;
++------+-------+----------+---------------------------------------------------------------------------+
+; CIN  ; Input ; Info     ; Stuck at GND                                                              ;
++------+-------+----------+---------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness|Problema1:u_alu"                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; N    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Z    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; C    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; V    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "CriticalPathHarness:u_harness"                                                                ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; din_a[31..4]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; din_b[31..4]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; dout_q[31..10] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 20                          ;
+;     CLR               ; 20                          ;
+; arriav_lcell_comb     ; 2562                        ;
+;     arith             ; 1124                        ;
+;         0 data inputs ; 70                          ;
+;         1 data inputs ; 338                         ;
+;         2 data inputs ; 54                          ;
+;         3 data inputs ; 158                         ;
+;         4 data inputs ; 450                         ;
+;         5 data inputs ; 54                          ;
+;     extend            ; 9                           ;
+;         7 data inputs ; 9                           ;
+;     normal            ; 1429                        ;
+;         2 data inputs ; 585                         ;
+;         3 data inputs ; 145                         ;
+;         4 data inputs ; 349                         ;
+;         5 data inputs ; 300                         ;
+;         6 data inputs ; 50                          ;
+; boundary_port         ; 25                          ;
+;                       ;                             ;
+; Max LUT depth         ; 105.90                      ;
+; Average LUT depth     ; 99.70                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:09     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Mon Sep 08 05:13:27 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab2 -c w32
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file suma_posicion.sv
+    Info (12023): Found entity 1: suma_posicion File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/suma_posicion.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file suma_parametrizable.sv
+    Info (12023): Found entity 1: suma_parametrizable File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/suma_parametrizable.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_suma_parametrizable.sv
+    Info (12023): Found entity 1: tb_suma_parametrizable File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_suma_parametrizable.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file restador_parametrizable.sv
+    Info (12023): Found entity 1: restador_parametrizable File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/restador_parametrizable.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_restador_parametrizable.sv
+    Info (12023): Found entity 1: tb_restador_parametrizable File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_restador_parametrizable.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file problema1.sv
+    Info (12023): Found entity 1: Problema1 File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_problema1.sv
+    Info (12023): Found entity 1: tb_problema1 File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_problema1.sv Line: 3
+Info (12021): Found 0 design units, including 0 entities, in source file tb_problema1_flags.sv
+Info (12021): Found 1 design units, including 1 entities, in source file multiplier.sv
+    Info (12023): Found entity 1: multiplier File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/multiplier.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file tb_multiplier.sv
+    Info (12023): Found entity 1: tb_multiplier File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/tb_multiplier.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file criticalpathharness.sv
+    Info (12023): Found entity 1: CriticalPathHarness File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/CriticalPathHarness.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file top_problema2_minimo.sv
+    Info (12023): Found entity 1: Top_Problema2_Minimo File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Top_Problema2_Minimo.sv Line: 2
+Info (12127): Elaborating entity "Top_Problema2_Minimo" for the top level hierarchy
+Info (12128): Elaborating entity "CriticalPathHarness" for hierarchy "CriticalPathHarness:u_harness" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Top_Problema2_Minimo.sv Line: 34
+Info (12128): Elaborating entity "Problema1" for hierarchy "CriticalPathHarness:u_harness|Problema1:u_alu" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/CriticalPathHarness.sv Line: 35
+Info (12128): Elaborating entity "suma_parametrizable" for hierarchy "CriticalPathHarness:u_harness|Problema1:u_alu|suma_parametrizable:u_add" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv Line: 25
+Info (12128): Elaborating entity "suma_posicion" for hierarchy "CriticalPathHarness:u_harness|Problema1:u_alu|suma_parametrizable:u_add|suma_posicion:sum_loop[0].fa" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/suma_parametrizable.sv Line: 23
+Info (12128): Elaborating entity "restador_parametrizable" for hierarchy "CriticalPathHarness:u_harness|Problema1:u_alu|restador_parametrizable:u_sub" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv Line: 37
+Info (12128): Elaborating entity "multiplier" for hierarchy "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv Line: 45
+Info (12128): Elaborating entity "suma_parametrizable" for hierarchy "CriticalPathHarness:u_harness|Problema1:u_alu|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/multiplier.sv Line: 32
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "CriticalPathHarness:u_harness|Problema1:u_alu|Div0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv Line: 58
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "CriticalPathHarness:u_harness|Problema1:u_alu|Mod0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv Line: 59
+Info (12130): Elaborated megafunction instantiation "CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Div0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv Line: 58
+Info (12133): Instantiated megafunction "CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Div0" with the following parameter: File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv Line: 58
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3dm.tdf
+    Info (12023): Found entity 1: lpm_divide_3dm File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/db/lpm_divide_3dm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/db/sign_div_unsign_9nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_o2f.tdf
+    Info (12023): Found entity 1: alt_u_div_o2f File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/db/alt_u_div_o2f.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Mod0" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv Line: 59
+Info (12133): Instantiated megafunction "CriticalPathHarness:u_harness|Problema1:u_alu|lpm_divide:Mod0" with the following parameter: File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Problema1.sv Line: 59
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_65m.tdf
+    Info (12023): Found entity 1: lpm_divide_65m File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/db/lpm_divide_65m.tdf Line: 25
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Top_Problema2_Minimo.sv Line: 7
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Top_Problema2_Minimo.sv Line: 7
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Usuario/Desktop/TEC II 2025/Taller_DD/laboratorio2/ffuchs_echavarria_digital_design_lab2_2025/problema1 + problema2/Top_Problema2_Minimo.sv Line: 7
+Info (21057): Implemented 2597 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 2572 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4948 megabytes
+    Info: Processing ended: Mon Sep 08 05:13:48 2025
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:38
+
+

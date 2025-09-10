@@ -1,0 +1,933 @@
+|Top_Problema1_FPGA_7SEG
+CLOCK_50 => V_r.CLK
+CLOCK_50 => C_r.CLK
+CLOCK_50 => Z_r.CLK
+CLOCK_50 => N_r.CLK
+CLOCK_50 => result_r[0].CLK
+CLOCK_50 => result_r[1].CLK
+CLOCK_50 => result_r[2].CLK
+CLOCK_50 => result_r[3].CLK
+CLOCK_50 => B_reg[0].CLK
+CLOCK_50 => B_reg[1].CLK
+CLOCK_50 => B_reg[2].CLK
+CLOCK_50 => B_reg[3].CLK
+CLOCK_50 => A_reg[0].CLK
+CLOCK_50 => A_reg[1].CLK
+CLOCK_50 => A_reg[2].CLK
+CLOCK_50 => A_reg[3].CLK
+CLOCK_50 => opcode_reg[0].CLK
+CLOCK_50 => opcode_reg[1].CLK
+CLOCK_50 => opcode_reg[2].CLK
+CLOCK_50 => opcode_reg[3].CLK
+CLOCK_50 => k3_d.CLK
+CLOCK_50 => k3_q.CLK
+CLOCK_50 => k2_d.CLK
+CLOCK_50 => k2_q.CLK
+CLOCK_50 => key0_sync_d.CLK
+CLOCK_50 => key0_sync.CLK
+SW[0] => ~NO_FANOUT~
+SW[1] => A_reg.DATAB
+SW[2] => A_reg.DATAB
+SW[3] => A_reg.DATAB
+SW[4] => A_reg.DATAB
+SW[5] => B_reg.DATAB
+SW[6] => B_reg.DATAB
+SW[7] => B_reg.DATAB
+SW[8] => B_reg.DATAB
+SW[9] => ~NO_FANOUT~
+KEY[0] => key0_sync.DATAIN
+KEY[1] => V_r.ACLR
+KEY[1] => C_r.ACLR
+KEY[1] => Z_r.ACLR
+KEY[1] => N_r.ACLR
+KEY[1] => result_r[0].ACLR
+KEY[1] => result_r[1].ACLR
+KEY[1] => result_r[2].ACLR
+KEY[1] => result_r[3].ACLR
+KEY[1] => key0_sync_d.PRESET
+KEY[1] => key0_sync.PRESET
+KEY[1] => k3_d.PRESET
+KEY[1] => k3_q.PRESET
+KEY[1] => k2_d.PRESET
+KEY[1] => k2_q.PRESET
+KEY[1] => opcode_reg[0].ACLR
+KEY[1] => opcode_reg[1].ACLR
+KEY[1] => opcode_reg[2].ACLR
+KEY[1] => opcode_reg[3].ACLR
+KEY[1] => B_reg[0].ACLR
+KEY[1] => B_reg[1].ACLR
+KEY[1] => B_reg[2].ACLR
+KEY[1] => B_reg[3].ACLR
+KEY[1] => A_reg[0].ACLR
+KEY[1] => A_reg[1].ACLR
+KEY[1] => A_reg[2].ACLR
+KEY[1] => A_reg[3].ACLR
+KEY[2] => k2_q.DATAIN
+KEY[3] => k3_q.DATAIN
+LEDR[0] <= result_r[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= result_r[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= result_r[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= result_r[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= V_r.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= C_r.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] <= Z_r.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] <= N_r.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[0] <= <VCC>
+HEX1[1] <= <VCC>
+HEX1[2] <= <VCC>
+HEX1[3] <= <VCC>
+HEX1[4] <= <VCC>
+HEX1[5] <= <VCC>
+HEX1[6] <= <VCC>
+HEX2[0] <= WideOr13.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[1] <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[2] <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[3] <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[4] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[5] <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[6] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[0] <= WideOr20.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[1] <= WideOr19.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[2] <= WideOr18.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[3] <= WideOr17.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[4] <= WideOr16.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[5] <= WideOr15.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[6] <= WideOr14.DB_MAX_OUTPUT_PORT_TYPE
+HEX4[0] <= WideOr27.DB_MAX_OUTPUT_PORT_TYPE
+HEX4[1] <= WideOr26.DB_MAX_OUTPUT_PORT_TYPE
+HEX4[2] <= WideOr25.DB_MAX_OUTPUT_PORT_TYPE
+HEX4[3] <= WideOr24.DB_MAX_OUTPUT_PORT_TYPE
+HEX4[4] <= WideOr23.DB_MAX_OUTPUT_PORT_TYPE
+HEX4[5] <= WideOr22.DB_MAX_OUTPUT_PORT_TYPE
+HEX4[6] <= WideOr21.DB_MAX_OUTPUT_PORT_TYPE
+HEX5[0] <= <VCC>
+HEX5[1] <= <VCC>
+HEX5[2] <= <VCC>
+HEX5[3] <= <VCC>
+HEX5[4] <= <VCC>
+HEX5[5] <= <VCC>
+HEX5[6] <= <VCC>
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut
+A[0] => A[0].IN3
+A[1] => A[1].IN3
+A[2] => A[2].IN3
+A[3] => A[3].IN3
+B[0] => B[0].IN3
+B[1] => B[1].IN3
+B[2] => B[2].IN3
+B[3] => B[3].IN3
+opcode[0] => Mux0.IN11
+opcode[0] => Mux1.IN11
+opcode[0] => Mux2.IN11
+opcode[0] => Mux3.IN11
+opcode[0] => Mux4.IN18
+opcode[0] => Mux5.IN15
+opcode[1] => Mux0.IN10
+opcode[1] => Mux1.IN10
+opcode[1] => Mux2.IN10
+opcode[1] => Mux3.IN10
+opcode[1] => Mux4.IN17
+opcode[1] => Mux5.IN14
+opcode[2] => Mux0.IN9
+opcode[2] => Mux1.IN9
+opcode[2] => Mux2.IN9
+opcode[2] => Mux3.IN9
+opcode[2] => Mux4.IN16
+opcode[2] => Mux5.IN13
+opcode[3] => Mux0.IN8
+opcode[3] => Mux1.IN8
+opcode[3] => Mux2.IN8
+opcode[3] => Mux3.IN8
+opcode[3] => Mux4.IN15
+opcode[3] => Mux5.IN12
+result[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+N <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Z <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+C <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+V <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|suma_parametrizable:u_add
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+CIN => CIN.IN1
+suma[0] <= suma_posicion:sum_loop[0].fa.suma
+suma[1] <= suma_posicion:sum_loop[1].fa.suma
+suma[2] <= suma_posicion:sum_loop[2].fa.suma
+suma[3] <= suma_posicion:sum_loop[3].fa.suma
+cout <= suma_posicion:sum_loop[3].fa.Cout
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|suma_parametrizable:u_add|suma_posicion:sum_loop[0].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|suma_parametrizable:u_add|suma_posicion:sum_loop[1].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|suma_parametrizable:u_add|suma_posicion:sum_loop[2].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|suma_parametrizable:u_add|suma_posicion:sum_loop[3].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B_comp[0].IN1
+B[1] => B_comp[1].IN1
+B[2] => B_comp[2].IN1
+B[3] => B_comp[3].IN1
+BORROW_IN => _.IN1
+DIFF[0] <= suma_parametrizable:U1.suma
+DIFF[1] <= suma_parametrizable:U1.suma
+DIFF[2] <= suma_parametrizable:U1.suma
+DIFF[3] <= suma_parametrizable:U1.suma
+BORROW_OUT <= suma_parametrizable:U1.cout
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+CIN => CIN.IN1
+suma[0] <= suma_posicion:sum_loop[0].fa.suma
+suma[1] <= suma_posicion:sum_loop[1].fa.suma
+suma[2] <= suma_posicion:sum_loop[2].fa.suma
+suma[3] <= suma_posicion:sum_loop[3].fa.suma
+cout <= suma_posicion:sum_loop[3].fa.Cout
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[0].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[1].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[2].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|restador_parametrizable:u_sub|suma_parametrizable:U1|suma_posicion:sum_loop[3].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul
+a[0] => partial.DATAB
+a[0] => partial.DATAB
+a[0] => partial.DATAB
+a[0] => partial.DATAB
+a[1] => partial.DATAB
+a[1] => partial.DATAB
+a[1] => partial.DATAB
+a[1] => partial.DATAB
+a[2] => partial.DATAB
+a[2] => partial.DATAB
+a[2] => partial.DATAB
+a[2] => partial.DATAB
+a[3] => partial.DATAB
+a[3] => partial.DATAB
+a[3] => partial.DATAB
+a[3] => partial.DATAB
+b[0] => partial.OUTPUTSELECT
+b[0] => partial.OUTPUTSELECT
+b[0] => partial.OUTPUTSELECT
+b[0] => partial.OUTPUTSELECT
+b[1] => partial.OUTPUTSELECT
+b[1] => partial.OUTPUTSELECT
+b[1] => partial.OUTPUTSELECT
+b[1] => partial.OUTPUTSELECT
+b[2] => partial.OUTPUTSELECT
+b[2] => partial.OUTPUTSELECT
+b[2] => partial.OUTPUTSELECT
+b[2] => partial.OUTPUTSELECT
+b[3] => partial.OUTPUTSELECT
+b[3] => partial.OUTPUTSELECT
+b[3] => partial.OUTPUTSELECT
+b[3] => partial.OUTPUTSELECT
+product[0] <= suma_parametrizable:gen_pp[3].add_i.suma
+product[1] <= suma_parametrizable:gen_pp[3].add_i.suma
+product[2] <= suma_parametrizable:gen_pp[3].add_i.suma
+product[3] <= suma_parametrizable:gen_pp[3].add_i.suma
+product[4] <= suma_parametrizable:gen_pp[3].add_i.suma
+product[5] <= suma_parametrizable:gen_pp[3].add_i.suma
+product[6] <= suma_parametrizable:gen_pp[3].add_i.suma
+product[7] <= suma_parametrizable:gen_pp[3].add_i.suma
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+CIN => CIN.IN1
+suma[0] <= suma_posicion:sum_loop[0].fa.suma
+suma[1] <= suma_posicion:sum_loop[1].fa.suma
+suma[2] <= suma_posicion:sum_loop[2].fa.suma
+suma[3] <= suma_posicion:sum_loop[3].fa.suma
+suma[4] <= suma_posicion:sum_loop[4].fa.suma
+suma[5] <= suma_posicion:sum_loop[5].fa.suma
+suma[6] <= suma_posicion:sum_loop[6].fa.suma
+suma[7] <= suma_posicion:sum_loop[7].fa.suma
+cout <= suma_posicion:sum_loop[7].fa.Cout
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[0].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[1].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[2].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[3].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[4].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[5].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[6].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[0].add_i|suma_posicion:sum_loop[7].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+CIN => CIN.IN1
+suma[0] <= suma_posicion:sum_loop[0].fa.suma
+suma[1] <= suma_posicion:sum_loop[1].fa.suma
+suma[2] <= suma_posicion:sum_loop[2].fa.suma
+suma[3] <= suma_posicion:sum_loop[3].fa.suma
+suma[4] <= suma_posicion:sum_loop[4].fa.suma
+suma[5] <= suma_posicion:sum_loop[5].fa.suma
+suma[6] <= suma_posicion:sum_loop[6].fa.suma
+suma[7] <= suma_posicion:sum_loop[7].fa.suma
+cout <= suma_posicion:sum_loop[7].fa.Cout
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[0].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[1].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[2].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[3].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[4].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[5].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[6].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[1].add_i|suma_posicion:sum_loop[7].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+CIN => CIN.IN1
+suma[0] <= suma_posicion:sum_loop[0].fa.suma
+suma[1] <= suma_posicion:sum_loop[1].fa.suma
+suma[2] <= suma_posicion:sum_loop[2].fa.suma
+suma[3] <= suma_posicion:sum_loop[3].fa.suma
+suma[4] <= suma_posicion:sum_loop[4].fa.suma
+suma[5] <= suma_posicion:sum_loop[5].fa.suma
+suma[6] <= suma_posicion:sum_loop[6].fa.suma
+suma[7] <= suma_posicion:sum_loop[7].fa.suma
+cout <= suma_posicion:sum_loop[7].fa.Cout
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[0].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[1].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[2].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[3].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[4].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[5].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[6].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[2].add_i|suma_posicion:sum_loop[7].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+A[4] => A[4].IN1
+A[5] => A[5].IN1
+A[6] => A[6].IN1
+A[7] => A[7].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+B[4] => B[4].IN1
+B[5] => B[5].IN1
+B[6] => B[6].IN1
+B[7] => B[7].IN1
+CIN => CIN.IN1
+suma[0] <= suma_posicion:sum_loop[0].fa.suma
+suma[1] <= suma_posicion:sum_loop[1].fa.suma
+suma[2] <= suma_posicion:sum_loop[2].fa.suma
+suma[3] <= suma_posicion:sum_loop[3].fa.suma
+suma[4] <= suma_posicion:sum_loop[4].fa.suma
+suma[5] <= suma_posicion:sum_loop[5].fa.suma
+suma[6] <= suma_posicion:sum_loop[6].fa.suma
+suma[7] <= suma_posicion:sum_loop[7].fa.suma
+cout <= suma_posicion:sum_loop[7].fa.Cout
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[0].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[1].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[2].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[3].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[4].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[5].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[6].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top_Problema1_FPGA_7SEG|Problema1:dut|multiplier:u_mul|suma_parametrizable:gen_pp[3].add_i|suma_posicion:sum_loop[7].fa
+A => suma.IN0
+A => Cout.IN0
+A => Cout.IN0
+B => suma.IN1
+B => Cout.IN1
+B => Cout.IN0
+Carry => suma.IN1
+Carry => Cout.IN1
+Carry => Cout.IN1
+suma <= suma.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

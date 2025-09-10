@@ -1,0 +1,76 @@
+module Problema1 #(
+    parameter int WIDTH = 4
+)(
+    input  logic [WIDTH-1:0] A,
+    input  logic [WIDTH-1:0] B,
+    input  logic [3:0]       opcode,   // 0000=ADD, 0001=SUB, 0010=DIV, 0011=AND,
+                                       // 0100=OR, 0101=XOR, 0110=MOD, 0111=SHL, 1000=SHR
+    output logic [WIDTH-1:0] result
+);
+
+    // ---------------- Suma 
+    logic [WIDTH-1:0] addResult;
+    logic             addCout;   // reservado si luego agregas flags
+
+    suma_parametrizable #(.N(WIDTH)) u_add (
+        .A    (A),
+        .B    (B),
+        .CIN  (1'b0),
+        .suma (addResult),
+        .cout (addCout)
+    );
+
+    // ---------------- Resta 
+    logic [WIDTH-1:0] subResult;
+    logic             subBorrow; // reservado si luego agregas flags
+
+    restador_parametrizable #(.N(WIDTH)) u_sub (
+        .A          (A),
+        .B          (B),
+        .BORROW_IN  (1'b0),
+        .DIFF       (subResult),
+        .BORROW_OUT (subBorrow)
+    );
+
+    // ---------------- División 
+    logic [WIDTH-1:0] Q_div;
+    always_comb begin
+        if (B == '0) Q_div = '0;       // política simple: 0 si div por 0
+        else         Q_div = A / B;    // cociente
+    end
+
+    // ---------------- MOD 
+    logic [WIDTH-1:0] Q_mod;
+    assign Q_mod = (B == '0) ? '0 : (A % B);
+
+    // ---------------- Lógica bit a bit
+    logic [WIDTH-1:0] Q_and, Q_or, Q_xor;
+    assign Q_and = A & B;
+    assign Q_or  = A | B;
+    assign Q_xor = A ^ B;
+
+    // ---------------- Shifts (por 1 bit)
+    logic [WIDTH-1:0] Q_shl, Q_shr;
+    assign Q_shl = A << 1;
+    assign Q_shr = A >> 1;
+
+    // ---------------- Selector de operación
+    always_comb begin
+        unique case (opcode)
+            4'b0000: result = addResult; // ADD
+            4'b0001: result = subResult; // SUB
+            4'b0010: result = Q_div;     // DIV
+            4'b0011: result = Q_and;     // AND
+            4'b0100: result = Q_or;      // OR
+            4'b0101: result = Q_xor;     // XOR
+            4'b0110: result = Q_mod;     // MOD
+            4'b0111: result = Q_shl;     // SHL (<<1)
+            4'b1000: result = Q_shr;     // SHR (>>1)
+            default: result = '0;
+        endcase
+    end
+
+endmodule
+
+
+

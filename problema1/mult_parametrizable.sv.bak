@@ -1,0 +1,54 @@
+
+module mult_parametrizable #(
+    parameter int N = 4
+)(
+    input  logic [N-1:0]     A,
+    input  logic [N-1:0]     B,
+    output logic [2*N-1:0]   P_full,   // producto completo (2N bits)
+    output logic [N-1:0]     P_trunc   // parte baja (opcional, para ALU de N bits)
+);
+    // 1) Productos parciales (N vectores de N bits)
+    logic [N-1:0] pp [N-1:0];
+    genvar i;
+    generate
+        for (i = 0; i < N; i++) begin : gen_pp
+            assign pp[i] = A & {N{B[i]}};
+        end
+    endgenerate
+
+    // 2) Extensión a 2N y desplazamiento i
+    logic [2*N-1:0] pp_ext [N-1:0];
+    generate
+        for (i = 0; i < N; i++) begin : gen_pp_ext
+            // Coloca pp[i] en los bits bajos y desplaza i posiciones
+            assign pp_ext[i] = ({ {N{1'b0}}, pp[i] }) << i;
+        end
+    endgenerate
+
+    // 3) Acumulación con sumadores estructurales (sin '+')
+    // acc[0] = 0; acc[k+1] = acc[k] + pp_ext[k]
+    logic [2*N-1:0] acc [N:0];
+    assign acc[0] = '0;
+
+    generate
+        for (i = 0; i < N; i++) begin : gen_acc
+            logic [2*N-1:0] sum_i;
+            logic           cout_i, cin_msb_dummy;
+
+            suma_parametrizable #(.N(2*N)) U_ADD (
+                .A    (acc[i]),
+                .B    (pp_ext[i]),
+                .CIN  (1'b0),
+                .SUM  (sum_i),
+                .COUT (cout_i),
+                .CARRY_INTO_MSB (cin_msb_dummy)
+            );
+            assign acc[i+1] = sum_i;
+        end
+    endgenerate
+
+    // 4) Salidas
+    assign P_full  = acc[N];
+    assign P_trunc = acc[N][N-1:0];
+
+endmodule
